@@ -6,7 +6,7 @@ app.get('/express-calculator/:operation/:num0/:num1', function(req,resp){
   let num0 = req.params.num0;
   let num1 = req.params.num1;
   let result;
-  
+
   if(operation == 'multiply'){
     result = (num0 * 1) * (num1 * 1);
   }
@@ -18,6 +18,9 @@ app.get('/express-calculator/:operation/:num0/:num1', function(req,resp){
   }
   else if(operation == 'subtract'){
     result = (num0 * 1) - (num1 * 1);
+  }
+  else if(operation == 'pow'){
+    result = "x<sup>y</sup> = " + Math.pow(num0, num1);
   }
   else{
     result = "Error: Incorrect input.";
